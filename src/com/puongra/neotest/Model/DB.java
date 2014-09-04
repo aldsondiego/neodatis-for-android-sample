@@ -10,6 +10,7 @@ import org.neodatis.odb.ODB;
 import org.neodatis.odb.ODBFactory;
 import org.neodatis.odb.OID;
 import org.neodatis.odb.Objects;
+import org.neodatis.odb.OdbConfiguration;
 
 import android.content.Context;
 import android.util.Log;
@@ -36,6 +37,8 @@ abstract class DB {
 		sd = ctx.getExternalFilesDir(null);
 		//file = new File(this.sd, this.ODB_NAME);
 		path = sd.getAbsolutePath()+"/"+this.ODB_NAME;
+		
+		OdbConfiguration.setReconnectObjectsToSession(true);
 	}
 
 	public void openConn(){

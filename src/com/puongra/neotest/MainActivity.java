@@ -21,7 +21,7 @@ import android.view.Menu;
 
 public class MainActivity extends Activity {
 
-	private final String TAG = "com.puongra.neotest";
+	private final String TAG = "com.puongra.task";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -73,20 +73,21 @@ public class MainActivity extends Activity {
 
 		//create
 		gDao.create(game);
+		sDao.loggerOf(Sport.class);
 		
 		//update
 		OID oid = gDao.getObjectId(game);//Date 'when' is the key to get object OID;
 		game.setSport(s3);
-		gDao.update(game, oid);
+		gDao.novoUpdate(game, oid);
 		
 		//delete
 		//gDao.delete(game);
 		
 		//loggers
-		sDao.loggerOf(Sport.class);
-		sDao.loggerOf(Player.class);
+		pDao.loggerOf(Player.class);
 		tDao.loggerOf(Team.class);
 		gDao.loggerOf(Game.class);
+		sDao.loggerOf(Sport.class);
 		
 		//*/
 	}

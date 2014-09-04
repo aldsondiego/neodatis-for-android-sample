@@ -1,5 +1,4 @@
 package com.puongra.neotest.Model;
-
 import android.content.Context;
 
 public class TeamDAO extends DB{

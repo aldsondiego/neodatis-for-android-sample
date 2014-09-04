@@ -60,6 +60,17 @@ public class GameDAO extends DB{
 			closeConn();
 		}
 	}
+	
+	public void novoUpdate(Game nObj, OID oid) {
+		openConn();
+		try{
+			this.odb.store(nObj);
+		}catch(Exception e){
+			Log.e(TAG, "Erro ao Atualizar o Objeto");
+		}finally{
+			closeConn();
+		}
+	}
 
 	public void delete(Game obj){
 		OID oid = getObjectId(obj);
